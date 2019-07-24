@@ -1,0 +1,3 @@
+First input a 2D array that does not conclude value over 255.
+Then use iteration procedures to flip (reverse the list in every row) every list.
+Finally, output the result.

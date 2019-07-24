@@ -1,0 +1,4 @@
+First input a 2D array that does not conclude value over 255, and the precentage of the rise of brightness of every pixel
+then use iteration procedures to increase every value in the array by n%.
+if the brightness of the pixel exeeds the limit, assign the acquiescent maximum value---255 to the pixel.
+Output the result.
