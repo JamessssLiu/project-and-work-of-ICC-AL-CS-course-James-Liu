@@ -1,9 +1,10 @@
 
 import numpy as np
-a=np.array([[1,1,1],[24,24,24],[135,153,135]])
+a=np.array([[1,1,1],[24,24,42],[135,153,531]])
+
 def imgflip(array):
     for i in range(len(array)):
-        array[i].reverse()
+        list(array[i]).reverse()
     return array
 
 print(imgflip(a))

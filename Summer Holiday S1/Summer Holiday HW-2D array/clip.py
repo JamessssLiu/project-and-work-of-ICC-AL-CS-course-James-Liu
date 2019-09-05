@@ -1,4 +1,5 @@
 
+from PIL import Image
 import numpy as n
 a=n.array([[1,1,1],[24,24,24],[135,153,135]])
 def imgclip(array,n):#n for the maximum value of brightness
@@ -8,4 +9,11 @@ def imgclip(array,n):#n for the maximum value of brightness
                 array[i][j]=n
     return array
 
-print(imgclip(a,100))
+
+a=n.repeat(imgclip(a,120),100,axis=1)
+a=n.repeat(imgclip(a,120),100,axis=0)
+'''
+print(a)
+'''
+image1=Image.fromarray(n.uint8(imgclip(a,120)))
+image1.show()

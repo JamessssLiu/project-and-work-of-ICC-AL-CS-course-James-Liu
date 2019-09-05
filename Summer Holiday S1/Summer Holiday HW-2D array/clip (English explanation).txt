@@ -1,4 +1,4 @@
 First input a 2D array that does not conclude value over 255, and the maximum brightness of every pixel.
 Then use iteration procedures to check every value in the array;
 if the value exeeds the maximum value, assign the maximum value to the pixel.
-Output the result.
+Output the result. 

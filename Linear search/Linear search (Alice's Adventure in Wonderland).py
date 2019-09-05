@@ -1,7 +1,7 @@
 #Text Organization
 import re
-text=input("Please input the text needed for checking")
-wd_lst=['a','aback','abacus','abandon','abandoned','abandonment','abashed','abate']
+text=open("alice in wonderland.txt")
+wd_lst=open("vocab list.txt")
 #An example as a vocabulary list
 notexpectedwords=[]
 punctuation = '!,;:?.()-*&/"\''
@@ -16,7 +16,7 @@ for i in range(len(txtsplt)-1):
         check_lst.append(txtsplt[i+1])
 
 #-------------------------------------------------------------------------------------------
-'''
+
 #The inefficient sequential search
 for i in range(len(check_lst)):
     found=False
@@ -28,9 +28,9 @@ for i in range(len(check_lst)):
             break
     if found==False:
         notexpectedwords.append(check_lst[i])
-'''
-#-------------------------------------------------------------------------------------------
 
+#-------------------------------------------------------------------------------------------
+'''
 #A more efficient alternative: binary search
 found=False
 lower_elmt=0
@@ -47,8 +47,11 @@ for i in range(len(check_lst)):
                 upper_elmt=m
     if found==False:
         notexpectedwords.append(check_lst[i])
-
+'''
 #------------------------------------------------------------------------------------------
 
 #Output
-print(notexpectedwords)
+unknownwords=len(notexpectedwords)
+knownwords=len(check_lst)-len(notexpectedwords)
+
+print(txtsplt)
