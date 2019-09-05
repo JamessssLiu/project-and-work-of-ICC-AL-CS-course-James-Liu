@@ -1,4 +1,5 @@
 #Text Organization
+import matplotlib.pyplot as plt
 import re
 text=open('D:\\刘荆琦\\ICC\\Senior 2\\CS\\Github Res\\project-and-work-of-ICC-AL-CS-course-James-Liu\\Sequential search\\alice in wonderland.txt')
 wd_lst=list(open('D:\\刘荆琦\\ICC\\Senior 2\\CS\\Github Res\\project-and-work-of-ICC-AL-CS-course-James-Liu\\Sequential search\\vocab list.txt'))
@@ -52,8 +53,14 @@ for i in range(len(check_lst)):
 #------------------------------------------------------------------------------------------
 
 #Output
-unknownwords=len(notexpectedwords)
+unfamiliarwords=len(notexpectedwords)
 knownwords=len(check_lst)-len(notexpectedwords)
 
-print(unknownwords)
-print(knownwords)
+labels = 'known words', 'unfamiliar words'
+sizes = [knownwords,unfamiliarwords]
+explode = (0,0)  
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal') 
+plt.show()
