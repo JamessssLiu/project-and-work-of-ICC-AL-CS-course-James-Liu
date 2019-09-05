@@ -1,22 +1,23 @@
 #Text Organization
 import re
-text=open("alice in wonderland.txt")
-wd_lst=open("vocab list.txt")
+text=open('D:\\刘荆琦\\ICC\\Senior 2\\CS\\Github Res\\project-and-work-of-ICC-AL-CS-course-James-Liu\\Sequential search\\alice in wonderland.txt')
+wd_lst=list(open('D:\\刘荆琦\\ICC\\Senior 2\\CS\\Github Res\\project-and-work-of-ICC-AL-CS-course-James-Liu\\Sequential search\\vocab list.txt'))
 #An example as a vocabulary list
 notexpectedwords=[]
-punctuation = '!,;:?.()-*&/"\''
+punctuation = '!,;:?.()-*&/"\'-_'
 def removepunc(t):
-    t = re.sub(r'[{}]+'.format(punctuation),'',t)
+    t = re.sub(r'[{}]+'.format(punctuation),'',t.read())
     return t.strip().lower()
 txtsplt=removepunc(text).split()
 txtsplt.sort()
 check_lst=[txtsplt[0]]
+
 for i in range(len(txtsplt)-1):
     if txtsplt[i+1]!=txtsplt[i]:
         check_lst.append(txtsplt[i+1])
 
 #-------------------------------------------------------------------------------------------
-
+'''
 #The inefficient sequential search
 for i in range(len(check_lst)):
     found=False
@@ -28,9 +29,9 @@ for i in range(len(check_lst)):
             break
     if found==False:
         notexpectedwords.append(check_lst[i])
-
-#-------------------------------------------------------------------------------------------
 '''
+#-------------------------------------------------------------------------------------------
+
 #A more efficient alternative: binary search
 found=False
 lower_elmt=0
@@ -47,11 +48,12 @@ for i in range(len(check_lst)):
                 upper_elmt=m
     if found==False:
         notexpectedwords.append(check_lst[i])
-'''
+
 #------------------------------------------------------------------------------------------
 
 #Output
 unknownwords=len(notexpectedwords)
 knownwords=len(check_lst)-len(notexpectedwords)
 
-print(txtsplt)
+print(unknownwords)
+print(knownwords)

@@ -9,11 +9,8 @@ def imgclip(array,n):#n for the maximum value of brightness
                 array[i][j]=n
     return array
 
-
 a=n.repeat(imgclip(a,120),100,axis=1)
 a=n.repeat(imgclip(a,120),100,axis=0)
-'''
-print(a)
-'''
+
 image1=Image.fromarray(n.uint8(imgclip(a,120)))
 image1.show()
