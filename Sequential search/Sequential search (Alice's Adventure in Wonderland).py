@@ -64,3 +64,6 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 ax1.axis('equal') 
 plt.show()
+
+print(isinstance(plt))
+#Your self-conciousness are the fie

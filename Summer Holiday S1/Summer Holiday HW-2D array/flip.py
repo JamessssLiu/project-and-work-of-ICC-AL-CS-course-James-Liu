@@ -1,14 +1,12 @@
 
 from PIL import Image
 import numpy as n
-a=n.array([[1,1,1],[24,24,42],[135,153,531]])
+a=n.array([[1,1,100],[24,24,42],[135,153,231]])
 
 def imgflip(array):
     for i in range(len(array)):
         list(array[i]).reverse()
     return array
-
-print(imgflip(a))
 
 a=n.repeat(imgflip(a),100,axis=1)
 a=n.repeat(imgflip(a),100,axis=0)
