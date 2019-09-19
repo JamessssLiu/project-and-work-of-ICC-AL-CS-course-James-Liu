@@ -35,7 +35,7 @@ for i in range(number):
     fullname=namelst.readline()
     for i in fullname:
         if fullname[i]==" ":
-            gradlst.write(fullname[(i+1):])
+            gradelst.write(fullname[(i+1):])
 gradelst.write("\n"+"Math grade        ")
 for i in range(number):   
     gradelst.write(str(mathgrade[i]))
@@ -44,7 +44,7 @@ for i in range(number):
     gradelst.write(str(csgrade[i]))
 gradelst.write("\n"+"Phy grade         ")
 for i in range(number):
-    gradlst.write(str(phygrade[i]))
+    gradelst.write(str(phygrade[i]))
 gradelst.close()         
 
 #Adding the ID column
