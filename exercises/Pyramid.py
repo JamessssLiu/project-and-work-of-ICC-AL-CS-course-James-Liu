@@ -35,7 +35,7 @@ while 1:
         break
 NumberOfSpaces=int((MaxNumberOfSymbols-1)/2)
 NumberOfSymbols=1
-NumberOfSpacesInMiddle=1
+NumberOfSpacesInMiddle=0
 while 1:
     if NumberOfSymbols==1:
         for i in range(NumberOfSpaces):
@@ -45,7 +45,7 @@ while 1:
         for i in range(NumberOfSpaces):
             print(" ",end="")
         print(symbol,end="")
-        for i in range(NumberOfSpacesInMiddle-2):
+        for i in range(NumberOfSpacesInMiddle-1):
             print(" ",end="")
         print(symbol,end="")
     elif NumberOfSymbols==MaxNumberOfSymbols:
