@@ -83,16 +83,13 @@ def CheckAllDiagnoalLine():
 def CheckFullBoard():
     global GameFinished
     BlankFound=False
-    ThisRow=0
-    while 1:
-        ThisColumn=0
-        while ThisColumn!=6 or BlankFound==False:
-            if Board[ThisRow][ThisColumn]==Blank:
+    for row in range(6):
+        for column in range(7):
+            if Board[row][column]==Blank:
                 BlankFound=True
-            ThisColumn+=1
-        if ThisRow==5 or BlankFound==True:
+                break
+        if BlankFound==True:
             break
-        ThisRow+=1
     if BlankFound==False:
         GameFinished=True
         print("It's a draw")
@@ -113,4 +110,3 @@ while not GameFinished:
     elif GameFinished==False:
         SwapPlayer()
     
-
