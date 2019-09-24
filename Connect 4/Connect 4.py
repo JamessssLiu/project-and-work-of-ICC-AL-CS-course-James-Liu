@@ -6,7 +6,6 @@ for row in range(6):
     for column in range(7):
         Board[row][column]=Blank
 
-
 #Set up game
 global ThisPlayer
 global WinnerFound
@@ -109,4 +108,4 @@ while not GameFinished:
         GameFinished=True
     elif GameFinished==False:
         SwapPlayer()
-    
+        
