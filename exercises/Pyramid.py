@@ -22,6 +22,7 @@ while 1:
     if NumberOfSymbols>MaxNumberOfSymbols:
         break
 '''
+'''
 #Hollow Pyramid
 #DECLARE symbol:STRING
 #DECLARE MaxNumberOfSymbols:INTEGER
@@ -57,4 +58,39 @@ while 1:
     NumberOfSpacesInMiddle+=2
     if NumberOfSymbols>MaxNumberOfSymbols:
         break
+'''
+#Revised version
+global Space
+Space=" "
+def InputMaxNumberOfSymbols():
+    Number=0
+    while Number%2==0:
+        print("Please input a valid integer")
+        Number=int(input("Input an odd number"))
+    return Number
 
+def OutPut(Number,Symbol):
+    for i in range(Number):
+        print(Symbol,end="")
+
+def GetSymbol():
+    Symbol=input("Please input the character")
+    return Symbol
+
+def AdjustValues(Spaces,Symbols):
+    Spaces-=1
+    Symbols+=2
+    return Spaces,Symbols
+
+def PrintPyramid():
+    Max=InputMaxNumberOfSymbols()
+    NumberOfSpaces=(Max+1)/2
+    NumberOfSymbols=1
+    Symbol=GetSymbol()
+    while NumberOfSymbols>=Max:
+        OutPut(NumberOfSpaces,Space)
+        OutPut(NumberOfSymbols,Symbol)
+        NumberOfSpaces,NumberOfSymbols=AdjustValues(NumberOfSpaces,NumberOfSymbols)
+        print()
+
+PrintPyramid()
