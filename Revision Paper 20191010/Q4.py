@@ -15,8 +15,8 @@ def SearchFile(Name,File):
         text=File.readline()
         for i in range(len(text)):
             if text[i]=="*" and text[:i]==Name:
-                return text
                 found=True
+                return text
                 break
     if found==False:
         return ""
@@ -32,3 +32,4 @@ def ProcessArray():
 
 CreateArray(ClassList,ClassCont)
 ProcessArray()
+
