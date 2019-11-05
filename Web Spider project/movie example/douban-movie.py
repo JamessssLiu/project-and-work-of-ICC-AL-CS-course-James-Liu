@@ -88,8 +88,7 @@ def main():
     
     words_df = pd.DataFrame({'segment': segment})  # 割词
 
-    stopwords = pd.read_csv("stopwords.txt", index_col=False, quoting=3, sep="\t", names=['stopword'],
-                            encoding='utf-8')
+    stopwords = pd.read_csv("stopwords.txt", index_col=False, quoting=3, sep="\t", names=['stopword'],encoding='utf-8')
     # -- 请实践： 停止词， 在 stopwords.txt 文件中，可以添加和修改停止词。 
     # 例如将 “电影” 这个词加入到 stopwords文件中，
     words_df = words_df[~words_df.segment.isin(stopwords.stopword)]
